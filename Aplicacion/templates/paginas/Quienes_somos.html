@@ -1,0 +1,47 @@
+{% extends "index.html" %}
+
+{% block titulo %} ¿Quienes somos? {% endblock %}
+
+{% block contenido %}
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<body>
+
+    <div style="font-size: 18px; text-align: center;  background-color: #FFFFFFC0; color: dark;" class="card-header " style="text-align: center;">
+        <h5 class="card-title mb-5">¿Quienes somos?</h5>
+        <p class="card-text mb-5 ">
+
+            Somos un equipo de estudiantes de ingeniería en sistemas de segundo semestre.
+            Estamos emocionados de presentar nuestra primera página web, la cual hemos creado como parte de nuestro
+            proyecto de investigación.
+
+            Nuestro objetivo principal es explorar el impacto de los servicios de entrega a domicilio en la vida diaria
+            de las personas. A través de esta plataforma, esperamos recopilar valiosas opiniones y experiencias que nos
+            permitan comprender mejor cómo estas empresas han cambiado nuestros hábitos de consumo.
+
+            Siendo nuestra primera incursión en el mundo del diseño web, hemos invertido tiempo y esfuerzo para aprender
+            y aplicar nuestros conocimientos en este proyecto. Valoramos enormemente tu participación, ya que cada
+            respuesta nos acerca más a nuestros objetivos de investigación.
+
+            Queremos agradecer sinceramente tu disposición para completar nuestra encuesta y contribuir a nuestro
+            crecimiento académico. Tu apoyo y retroalimentación son fundamentales para nuestro aprendizaje y desarrollo
+            profesional.
+
+            ¡Nos sentimos emocionados de unirnos a la comunidad de investigadores y esperamos que disfrutes de esta
+            experiencia! </p>
+            ¡Gracias por ser parte de este proyecto!"
+
+
+        </p>
+        <a href="{% url 'encuesta' %}" class="btn" style="background-color: #000000C0; color: white;">Comenzar Encuesta</a>
+    </div>
+    </div>
+
+</body>
+
+</html>
+
+{% endblock %}

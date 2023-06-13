@@ -1,0 +1,49 @@
+{% extends "index.html" %}
+
+{% block titulo %} ¡Gracias {% endblock %}
+
+{% block contenido %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="row py-5">
+            <div class="col-md-6 offset-md-3">
+                <form style="
+                background-color:  #FFFFFFC0;
+                color: dark;
+                border: 1px solid  #000000C0;
+                padding: 5px;
+                margin: 10px;" action="{% url 'registrarRespuestas' %}" method="POST" class="card card-header "
+                    required>
+
+                    <div class="card-header bg-light " style="text-align: center;">
+                        <h3 class="card-title mb-5 ">¡Muchas Gracias!</h3>
+                        <p class="card-text mb-5 ">
+
+                            Agradecemos sinceramente tu participación en nuestra encuesta.</p> Tu opinión es valiosa para
+                            nosotros.</p>
+                        ¡Gracias por formar parte de este estudio y por compartir tus respuestas!
+
+                        </p>
+                        <a href="/" class="btn btn-success" style="background-color: #000000C0; color: white;">Ok</a>
+                    </div>
+            </div>
+
+            </form>
+
+        </div>
+    </div>
+    </div>
+
+</body>
+
+</html>
+
+
+{% endblock %}

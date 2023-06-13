@@ -1,0 +1,68 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+  <link rel="stylesheet" href="{% static 'main.css' %}" />
+
+
+  <title>{% block titulo %} Inicio {% endblock %}</title>
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark ">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="{% url 'home'%}">Inicio</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02"
+        aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse " id="navbarTogglerDemo02">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0 ">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="{% url 'quienes_somos'%}">¿Quienes somos?</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'informacion'%}">Informacion</a>
+          </li>
+        </ul>
+
+  </nav>
+
+  {% block contenido %}
+  <div class="card-header   " style="font-size: 18px; text-align: center;  background-color: #FFFFFFC0; color: dark;">
+
+    <h4 class="card-title mb-5">"Encuesta sobre el uso y satisfacción de servicios de entrega a domicilio en estudiantes
+      universitarios durante la pandemia (marzo 2020 - presente)"</h4>
+    <p class="card-text mb-5 ">
+
+      ¡Hola! Esperamos que estés teniendo un excelente día. Como parte de nuestro proyecto de investigación, te
+      invitamos a participar en nuestra encuesta. </p>
+
+    Tu participación es muy importante para nosotros, ya que nos ayudará a comprender mejor cómo estas empresas han
+    cambiado nuestros hábitos de consumo en nuestra vida diaria. La encuesta es completamente anónima y tomará solo unos
+    minutos de tu tiempo. </p>Además, como agradecimiento por tu participación, todos los ID registrados en nuestra base de
+    datos entrarán en un sorteo de un cupón de 50bs.
+
+    Agradecemos sinceramente tu tiempo y tus respuestas. Para comenzar la encuesta, por favor haz clic en 'Comenzar'.
+    </p>
+
+    ¡Muchas gracias y que tengas un excelente día!</p>
+    <a href="{% url 'encuesta' %}" class="btn btn-success "
+      style="background-color: #000000C0; color: white;">Comenzar</a>
+  </div>
+  </div>
+
+
+
+  {% endblock %}
+
+</body>
+
+</html>

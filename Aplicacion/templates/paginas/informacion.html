@@ -1,0 +1,72 @@
+{% extends "index.html" %}
+
+{% block titulo %} Informacion {% endblock %}
+
+{% block contenido %}
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+</head>
+
+<body>
+    <div style="font-size: 18px; text-align: center;  background-color: #FFFFFFC0; color: dark;" class="card-header " style="text-align: center;"> <style>
+        p {
+          margin-top: 1px;
+          margin-bottom: 1px;
+        }
+      </style>
+        <h3 class="card-title mb-5">Informacion</h3>
+        <p class="card-text mb-5 ">
+
+            Esta encuesta tiene como objetivo recopilar información sobre tus experiencias y opiniones relacionadas con
+            los servicios de entrega a domicilio. Queremos entender cómo estas empresas han cambiado tus hábitos de
+            consumo, así como evaluar la satisfacción general con los servicios ofrecidos. 
+
+            Confidencialidad y anonimato:
+            Queremos asegurarte que todas las respuestas proporcionadas en esta encuesta serán tratadas de manera
+            confidencial y se mantendrá tu anonimato. La información recopilada se utilizará únicamente con fines de
+            investigación y se procesará de forma agregada para preservar tu privacidad.
+
+            Duración de la encuesta:
+            Esta encuesta tomará aproximadamente 5-10 minutos de tu tiempo. Apreciamos sinceramente el esfuerzo que
+            dediques para completarla, ya que cada respuesta es valiosa para nuestro estudio.
+
+            Beneficios de participar:
+            Como muestra de agradecimiento por tu participación, todos los participantes estarán automáticamente
+            inscritos en un sorteo de un cupón de 50bs. ¡No pierdas la oportunidad de ganar!
+
+            Cómo participar:
+            Para comenzar la encuesta, simplemente haz clic en el botón "Comenzar" a continuación. Asegúrate de
+            responder cada pregunta con sinceridad y completar todos los campos requeridos.
+
+            Contacto:
+            Si tienes alguna pregunta o inquietud relacionada con la encuesta, no dudes en contactarnos a través de
+            este numero    : <a class="btn btn-success "href="https://wa.me/78761444">whatsapp</a>
+        </p>
+
+            Agradecemos sinceramente tu participación y el tiempo que dedicarás a completar esta encuesta. Tus
+            respuestas nos ayudarán a obtener información valiosa y mejorar la comprensión de estos servicios.
+
+        </p>
+
+
+        ¡Gracias por tu participación y por contribuir a nuestra investigación!"
+
+
+
+        </p>
+        <a href="{% url 'encuesta' %}" class="btn" style="background-color: #000000C0; color: white;">Comenzar Encuesta</a>
+    </div>
+    </div>
+
+</body>
+
+</html>
+
+{% endblock %}
+
+{% load static %}

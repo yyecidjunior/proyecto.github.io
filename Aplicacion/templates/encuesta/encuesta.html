@@ -1,0 +1,256 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="{% static 'main.css' %}" />
+    <link rel="stylesheet" href="{% static 'color.css' %}" />
+
+    <title>Gracias por tomarte el tiempo</title>
+
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="row py-4">
+            <div class="col-md-8 offset-md-1">
+
+                <h2 style="color: white;">Ayudamos a llenar esta encuesta por favor</h2>
+
+                <form style="
+                font-size: 20px;
+                background-color:  #FFFFFFC0;
+                color: dark;
+                border: 5px solid  #000000C0;
+                padding: 20px;
+                margin: 2px;" action="{% url 'registrarRespuestas' %}" method="POST" class="card card-header "
+                    required>
+
+                    {% csrf_token %}
+                    <label for="Nombre">Carrera:</label>
+                    <input type="text" minlength="3" maxlength="100" name="Carrera"
+                        placeholder="Escriba su carrera por favor " class="form-control mb-3" autofocus required>
+                    <label for="Carrera">Edad:</label>
+                    <input minlength="1" maxlength="100" type="text" name="Edad" placeholder="Digite su Edad por favor "
+                        class="form-control mb-3" autofocus required>
+
+                    <label for="">Genero:</label>
+                    <div class="form-check">
+                        <input class="form-check-input" value="M" type="radio" name="Genero" id="R01" required>
+                        <label class="form-check-label" for="R1">Masculino</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" value="F" type="radio" name="Genero" id="R02" required>
+                        <label class="form-check-label mb-3" for="R12">Femenino</label>
+                    </div>
+                    <h4 class="mb-3">Solo son 10 preguntas </h4>
+
+                    <label for=""class="mb-3">¿Has utilizado algún servicio de entrega a domicilio durante la cuarentena de
+                        COVID-19?</label>
+                    <div class="form-check">
+                        <input class="form-check-input" value="1" type="radio" name="R1" id="R21" required>
+                        <label class="form-check-label" for="R21">Sí, he utilizado mucho servicios de entrega a domicilio durante la cuarentena  </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" value="2" type="radio" name="R1" id="R22" required>
+                        <label class="form-check-label" for="R22">Sí, he pedido comida a domicilio algunas veces durante la cuarentena.</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" value="3" type="radio" name="R1" id="R23" required>
+                        <label class="form-check-label" for="R23">No, no he utilizado ningún servicio de entrega a domicilio durante la cuarentena de COVID-19.</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" value="4" type="radio" name="R1" id="R24" required>
+                        <label class="form-check-label mb-5" for="R24">No tenía conocimiento de los servicios de entrega a domicilio durante la cuarentena y no los utilicé.</label>
+                    </div>
+                    <label class="mb-3" for="">2.-¿Notaste el incremento de repartidores en la ciudad durante y después
+                        de la
+                        pandemia?</label>
+                    <div class="form-check ">
+                        <input class="form-check-input" value="1" type="radio" name="R2" id="R31" required>
+                        <label class="form-check-label" for="R31">Sí, hubo más repartidores durante y después de la
+                            pandemia</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" value="2" type="radio" name="R2" id="R32" required>
+                        <label class="form-check-label" for="R32">No noté un aumento significativo de
+                            repartidores</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" value="3" type="radio" name="R2" id="R33" required>
+                        <label class="form-check-label" for="R33">Vi más repartidores durante la pandemia, pero después
+                            disminuyeron</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" value="4" type="radio" name="R2" id="R34" required>
+                        <label class="form-check-label mb-5" for="R33">No hubo un incremento de repartidores en la
+                            ciudad durante y después de la pandemia</label>
+                    </div>
+                    <label for="">3.-¿Conocías alguna empresa de entrega a domicilio antes de la pandemia?</label>
+                    <div class="form-check">
+                        <input class="form-check-input" value="1" type="radio" name="R3" id="R41" required>
+                        <label class="form-check-label" for="R41">si, hacia pedidos con frecuencia</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" value="2" type="radio" name="R3" id="R42" required>
+                        <label class="form-check-label" for="R42">si, hacia pedidos regularmente</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" value="3" type="radio" name="R3" id="R43" required>
+                        <label class="form-check-label" for="R43">no para nada, se hicieron conocidas despues de la
+                            pandemia</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" value="4" type="radio" name="R3" id="R44" required>
+                        <label class="form-check-label mb-5" for="R44">no estoy seguro/a.</label>
+                    </div>
+                    <label for="">4.-¿Cuál es el motivo principal por el que utilizas servicios de entrega a
+                        domicilio?</label>
+                    <div class="form-check">
+                        <input class="form-check-input" value="1" type="radio" name="R4" id="R51" required>
+                        <label class="form-check-label" for="R51">Ahorro de tiempo</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" value="2" type="radio" name="R4" id="R52" required>
+                        <label class="form-check-label" for="R52">Dificultad para salir de casa</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" value="3" type="radio" name="R4" id="R53" required>
+                        <label class="form-check-label" for="R53">Variedad de opciones disponibles</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" value="4" type="radio" name="R4" id="R54" required>
+                        <label class="form-check-label" for="R54">Cupones</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" value="5" type="radio" name="R4" id="R55" required>
+                        <label class="form-check-label mb-5" for="R55">No utilizo los servicios de entrega a
+                            domicilo</label>
+                    </div>
+                    <label for="">5.-¿Conoces algunas de estas empresas de entrega a domicilio? (marcar todas las empresas que conozcas)</label>
+                    <div class="form-check">
+                        <input class="form-check-input" value="PedidosYa" type="checkbox" name="R5" id="R71">
+                        <label class="form-check-label" for="PedidosYa">PedidosYa</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" value="Yaigo/Yumy" type="checkbox" name="R5" id="R72">
+                        <label class="form-check-label" for="Yaigo/Yumy">Yaigo/Yumy</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" value="Uber_eats" type="checkbox" name="R5" id="R73">
+                        <label class="form-check-label" for="Uber_eats">Uber eats</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" value="PatioServis" type="checkbox" name="R5" id="R74">
+                        <label class="form-check-label" for="PatioServis">PatioServis</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input mb-5" placeholder="Otras empresas (especificar)" value="" type="text"
+                            name="R5" id="R75" style="width: 500px; height: 30px;font-size: 17px;">
+                    </div>
+
+                    <label for="">6.-¿Tuviste alguna mala experiencia realizando un pedido?</label>
+                    <div class="form-check">
+                        <input class="form-check-input" value="1" type="radio" name="R6" id="R81" required>
+                        <label class="form-check-label" for="R81">Si, El pedido llegó en mal estado</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" value="2" type="radio" name="R6" id="R82" required>
+                        <label class="form-check-label" for="R82">Si, el pedido nunca llego</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" value="3" type="radio" name="R6" id="R83" required>
+                        <label class="form-check-label" for="R83">Si, me trajeron mi pedido incompleto</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" value="4" type="radio" name="R6" id="R84">
+                        <label class="form-check-label" for="R84">No me paso a mi, pero si a un conocido</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" value="5" type="radio" name="R6" id="R85" required>
+                        <label class="form-check-label mb-5" for="R85">no, nunca tuve una mala experiencia </label>
+                    </div>
+                    <label for="">7.-¿Crees que las empresas de entrega a domicilio jugaron un papel muy importante en
+                        la
+                        pandemia?</label>
+                    <div class="form-check">
+                        <input class="form-check-input" value="1" type="radio" name="R7" id="R91" required>
+                        <label class="form-check-label" for="R91">Sí, fueron muy fundamentales en la pandemia.</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" value="2" type="radio" name="R7" id="R92" required>
+                        <label class="form-check-label" for="R92">Fueron importantes, pero no muy relevantes.</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" value="3" type="radio" name="R7" id="R93" required>
+                        <label class="form-check-label " for="R93">Sí, desempeñaron un papel esencial.</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" value="4" type="radio" name="R7" id="R94" required>
+                        <label class="form-check-label mb-5">No, no tuvieron un papel relevante</label>
+                    </div>
+                    <label for="">8.-¿Cuál es el tipo de producto o servicio que más sueles pedir a través de servicios
+                        de entrega a domicilio?</label>
+
+                    <div class="form-check">
+                        <input class="form-check-input" value="Farmacias" type="checkbox" name="R8" id="R71">
+                        <label class="form-check-label" for="Farmacias">Farmacias</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" value="Encargos" type="checkbox" name="R8" id="R72">
+                        <label class="form-check-label" for="Encargos">Encargos</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" value="Supermercados" type="checkbox" name="R8" id="R73">
+                        <label class="form-check-label" for="Supermercados">Supermercados</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" value="Restaurantes" type="checkbox" name="R8" id="R74">
+                        <label class="form-check-label" for="Restaurantes">Restaurantes</label>
+                    </div>
+                    <div class="form-check mb-5">
+                        <input class="form-check-input" placeholder="Otros productos o servicios que utilices (especificar)." value="" type="text" name="R8" id="R76" style="width: 500px; height: 30px;font-size: 17px;">
+                    </div>
+
+                    <label for="">9.-¿Aproximadamente cuánto gastas al mes en los servicios de entrega a
+                        domicilio?</label>
+                    <input minlength="1" maxlength="20000" type="text" name="R9"
+                        placeholder="Digite un monto por favor de no haber hecho nunca un pedido ignora la pregunta"
+                        class="form-control mb-3">
+                    <label class="mb-3" name="R11" for="">10.-¿Tienes algun comentario de los servicios de entrega a
+                        domicilio?</label>
+                    <textarea minlength="3" maxlength="20000" class="form-control mb-5"
+                        placeholder="Danos tu opinión acerca del trabajo que realizan estas empresas de reparto"
+                        id="txtarea" rows="3" name="R10" autofocus required></textarea>
+                    <h4>OPCIONAL</h4>
+                    <h5>¡Gracias por participar en nuestra encuesta! Tu participación te brinda la oportunidad de ganar
+                        un cupón de 50 Bs. Si resultas ganador/a, nos pondremos en contacto contigo utilizando los datos
+                        proporcionados para hacer entrega de tu premio. </h5>
+                    <label for="Nombre">Nombre:</label>
+                    <input type="text" minlength="3" maxlength="200" name="Nombre"
+                        placeholder="Escriba su nombre porfavor " class="form-control mb-3">
+                    <label for="Carrera">Numero de Celular:</label>
+                    <input minlength="3" maxlength="200" type="text" name="Numero_de_Celular"
+                        placeholder="Digite su Numerode celular " class="form-control mb-3">
+
+
+
+
+                    <button class="btn" style="background-color: #000000C0; color: white;">Enviar Encuesta</button>
+
+
+                </form>
+
+
+
+</body>
+
+</html>
